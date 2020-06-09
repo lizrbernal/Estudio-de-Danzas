@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Estudio de danza</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+          <style> 
+              
+                @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+        .mostrar-popup {
+            padding: 0px 20px;
+            height: 40px;
+            line-height: 40px;
+            border: none;
+            color: #fff;
+            background: #5e7de3;
+            font-family: "Montserrat", sans-serif;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: .7 ease all;
+        }
+        
+        .overlay {
+            background: rgba(0, 0, 0, .3);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            visibility: hidden;
+            justify-content: center;
+        }
+        
+        .overlay.active {
+            visibility: visible;
+        }
+        
+        .popup {
+            font-family: "Montserrat", sans-serif;
+            background: white;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .5);
+            border-radius: 3px;
+            padding: 20px;
+            text-align: center;
+            width: 600px;
+        }
+        
+        .popup .btn-cerrar-popup {
+            font-size: 16px;
+            line-height: 16px;
+            display: block;
+            text-align: right;
+            color: #bbbbbb;
+            transition: .3s ease all;
+        }
+        
+        .popup .btn-cerrar-popup:hover {
+            color: black;
+        }
+        
+        .popup .btn-cerrar-popup .cerrar {
+            text-decoration: none;
+        }
+        
+        .popup h3 {
+            font-size: 36px;
+            font-weight: 36px;
+            margin-bottom: 10px;
+            /* opacity: ; */
+        }
+        
+        .popup form .contenedor-inputs input {
+            width: 100%;
+            margin-bottom: 20px;
+            height: 52px;
+            line-height: 52px;
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid #bbbbbb;
+        }
+        
+        .popup form .btn-submit {
+            padding: 0px 20px;
+            height: 40px;
+            line-height: 40px;
+            border: none;
+            color: #fff;
+            background: #5e7de3;
+            font-family: "Montserrat", sans-serif;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: .7 ease all;
+        }
+        
+        .popup form .btn-submit:hover {
+            background: rgba(94, 125, 227, .5);
+        }
+              
+              
+              
+              
+              
+                            
+              
+a:hover{
+    background-color:  gray
+        
+}
+a{
+    font-size:  larger
+}
+a{
+    font-weight: bold
+}
+a{
+    font-variant-ligatures: no-additional-ligatures
+}
+ 
+tr{
+    position: absolute;
+                top: 300px;
+                left: 200px;
+}
+ #a {
+      position: absolute;
+                top: 20px;
+                right:400px;
+}
+#b{
+     position: absolute;
+                top: 10px;
+                right:100px;
+}
+
+#c{
+      position: absolute;
+                top: 450px;
+                right:5px;
+}
+#c{
+   font-size: 1.8em;
+    font-weight:  900 ;
+    text-transform:  fullsize-kana ;
+}
+
+#d{
+        position: absolute;
+                top: 70px;
+                right:1300px;
+}
+#d{
+     font-size: 1.5em;
+}
+#e{
+    position: absolute;
+                top: 100px;
+                right:10px;
+}
+
+#f{
+    font-style:  initial
+}
+#f{
+    font-size: 1.3em;
+    font-stretch:   extra-expanded 
+   
+}
+#g{
+    position:  absolute ;
+                top: 100px;
+                right:70px;
+}
+
+
+#h{
+    font-size: 1.9em;
+}
+
+#h {
+    position:  absolute ;
+                top: 1640px;
+                right:70px;
+}
+
+
+#k {
+    
+    padding: 0;
+}
+#i{
+    position:  absolute ;
+                top: 1750px;
+                left: 650px;
+}
+#j{
+    position:  absolute ;
+                top: 1750px;
+                right: 790px;
+}
+#l{
+    position:  absolute ;
+                top: 1750px;
+                right: 690px;
+}
+
+   
+
+#bloque2{
+              background-color: gainsboro;
+              height: 20px;
+              width: 1670px;
+              position: absolute;
+              top: 1700px;
+              left: 5px;
+              border-width: thin;
+              border-style: solid;
+              border-color: gainsboro;
+            }
+            
+            
+            
+  
+          .slider{
+                width: 95%;
+                margin: auto;  
+                overflow: hidden;
+            }
+            .slider ul {
+                display: flex;
+                padding: 0;
+                width: 400%;
+                animation: cambio 20s infinite;
+                animation-direction:  alternate;
+               
+            }
+            .slider li{
+                width: 100%;
+                list-style: none;
+                
+            }
+            .slider img{
+                width: 80%              
+            }
+            
+            @keyframes cambio {
+                0% { margin left: 0; }
+                20% { margin-left: 0; }
+                
+                25% {margin-left: -100%; }
+                 45% {margin-left: -100%;}
+                 
+                  50% {margin-left: -200%; }
+                 70% {margin-left: -200%;}
+                 
+                  75% {margin-left: -300%; }
+                 100% {margin-left: -300%;}
+            }
+
+        </style>
+        
+        <script>
+    
+        function mostrarPopup() {
+            var overlay = document.getElementById('overlay');
+            overlay.style.visibility = 'visible';
+        }
+
+        function ocultarPopup() {
+            var overlay = document.getElementById('overlay');
+            overlay.style.visibility = 'hidden';
+        }   
+    
+    
+    </script>
+        
+    </head>
+    <body>
+     
+        <header>
+          
+           
+                <img  id="1" src="imagenes/logo.png" width="300" height="80" align="left" alt="logo"/> <br> <br>
+                <label id="a" >
+                    <table border="0" id="c" >
+               
+                     <tr>  <a>Historia |</a>
+                    </tr>
+                    <tr> <a  > Dirección |</a>
+                    </tr>
+                    <tr>  <a > Espacio |</a>
+                    </tr>
+                </tbody>
+            </table>
+                    </label>
+                <br>
+             
+                
+                 <div class="overlay" id="overlay">
+            <div class="popup" id="popup">
+                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="ocultarPopup()">
+                    <div class="cerrar">X</div>
+                </a>
+                <h3>BUSCAR</h3>
+                <form action="">
+                    <div class="contenedor-inputs">
+                        <input type="search" name="buscar" id="buscar">
+                    </div>
+                    <input type="submit" class="btn-submit">
+                </form>
+            </div>
+        </div> 
+                <label id="b" > 
+        <img  id="2" src="imagenes/buscar.jpg" width="50" height="50" alt="buscar" onclick="mostrarPopup()" />
+                </label>
+                <hr>
+               
+              
+            
+          
+              
+        
+                <h3 style="color: gray" id="d" > Historia     / Estudio /     Conctacto </h3> <br>  <br>
+             <p id="c" style="color: gray" > Solo necesitas ganas de bailar <br> tu decides cuando empezar. <br>
+                 <i id="e" > "Brilla como nunca"</i> </p>
+             <label id="g" >
+             <table border="0"  >
+                 <thead>
+                     <tr><img src="imagenes/facebook.jpg" width="80" height="80" alt="facebook"/>
+
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr> <img src="imagenes/instagram.jpg" width="80" height="80" alt="instagram"/>
+
+                     </tr>
+                     <tr> <img src="imagenes/twitter.png" width="80" height="80" alt="twitter"/>
+
+                     </tr>
+                     
+                 </tbody>
+             </table> 
+             </label> <br>
+             
+              <div  class="slider" >
+   
+                    <ul > 
+                        <li><img src="imagenes/1.jpg" width="1200" height="800" alt="1"/>
+                        </li>
+                        <li><img src="imagenes/2.png" width="1200" height="800" alt="2"/>
+                        </li>
+                        <li> <img src="imagenes/8.jpg" width="1200" height="800" alt="8"/>
+                        </li>
+                        <li><img src="imagenes/9.jpg" width="1200" height="800" alt="9"/>
+
+                        </li>
+                    </ul>
+              </div>                            
+
+            
+             
+           
+             <label id="f" style="color: grey" >  <p> El  estudio de Danza nace con el objetivo de no dejar del lado el baile hay 
+                     personas que dejaron de bailar hace años y buscan lugares de bailes para volver a renacer esa alma artistica 
+                     que alguna vez hicieron enbellecer, y para almas nuevas, ya que el estudio es para todas las edades sin discrimación 
+                     alguna. En el estudio dictan clases de danza Paraguaya, Kinder-Baby, Pre-Ballet, Danza Clásica, Jazz, Heels, Reggaeton,
+                     Hip Hop, Española Árabe y Pilates para la danza. </p> 
+
+                 <p> Para niños, jóvenes y adultos a partir de 3 años. </p> 
+<p> Cuenta con Salas especialmente equipadas con pisos de madera, espejos y barras fijas.</p>  </label> <br>
+
+              <img src="imagenes/7.jpg" width="600" height="400" alt="7"/> <img src="imagenes/6.jpg" width="450" height="400" alt="6"/> 
+              <img src="imagenes/5.jpg" width="600" height="400" alt="5"/> <br>  <br> 
+             
+             
+              <b id="h" >  <i> Te regalamos una clase gratis, por el ritmo que elijas. </i>  </b>   <br>
+              
+              
+              <div id="bloque2"></div> <br> <br> <br> <br>    <br>
+              
+              
+         
+             
+            
+                
+              <a  id="i"class="option" href="nosotros"  >  Contactamos </a>   <br>
+              
+              <a  id="j" class="option" href="nosotros"> Registrate </a>  <br>
+              
+             <a  id="l" class="option" href="nosotros"> Gmail </a>  <br>
+            
+           
+           
+        </header>
+        <div></div>
+    </body>
+</html>
+
